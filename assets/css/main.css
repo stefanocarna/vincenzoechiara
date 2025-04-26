@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .wedding-bg {
+    /* background-image: url("~/assets/images/paper.png"); */
+    background-image: url("~/assets/images/section-bg.png");
+    background-repeat: repeat;
+    background-attachment: fixed;
+  }
+  .sage-bg {
+    background-color: #d0ccb3;
+  }
+
+  .x-text-purple {
+    color: #aaabd3;
+  }
+
+  .x-text-brown {
+    color: #492d26;
+  }
+
+  .section-bg-image {
+    background-image: url("~/assets/images/paper.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+  }
+
+  /* .content-card {
+    @apply bg-white/90 backdrop-blur-sm p-8 rounded-xl shadow-lg;
+  } */
+}
