@@ -10,7 +10,7 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      serif: ['"Cormorant Garamond"', 'serif'],
+      serif: ['"Didact Gothic"', 'serif'],
       sans: ['"Great Vibes"', 'sans-serif'],
     },
     extend: {},

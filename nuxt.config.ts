@@ -26,7 +26,7 @@ export default defineNuxtConfig({
         // Second font family
         {
           rel: 'stylesheet', 
-          href: 'https://fonts.googleapis.com/css2?family=Lovers+Quarrel&family=Lugrasimo&family=Meow+Script&display=swap',
+          href: 'https://fonts.googleapis.com/css2?family=Didact+Gothic&family=Lugrasimo&family=Meow+Script&display=swap',
           as: 'style',
           onload: "this.onload=null;this.rel='stylesheet'"
         },

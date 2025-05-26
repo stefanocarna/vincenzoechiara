@@ -9,8 +9,13 @@
     background-repeat: repeat;
     background-attachment: fixed;
   }
+
   .sage-bg {
     background-color: #d0ccb3;
+  }
+
+  .cream-bg {
+    background-color: #fffcf0;
   }
 
   .x-text-purple {
@@ -27,6 +32,13 @@
     background-position: center;
     background-repeat: no-repeat;
     background-attachment: fixed;
+  }
+
+  .section-bg-gold {
+    background-image: url("~/assets/images/front-bg.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
   }
 
   /* .content-card {
