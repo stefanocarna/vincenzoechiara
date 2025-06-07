@@ -145,102 +145,204 @@
     height: auto;
   }
 
-  .flower-rose-1 {
+  .flower-roses-1 {
     top: -2rem;
-    left: -2rem;
-    width: 45%;
-  }
-
-  .flower-rose-2 {
-    top: -4rem;
-    right: -3rem;
-    width: 65%;
-    transform: rotate(310deg);
-  }
-
-  .flower-rose-3 {
-    top: -4rem;
-    left: -3rem;
+    left: -5rem;
     width: 60%;
-    transform: rotate(15deg);
   }
 
-  .flower-violet-1 {
-    top: -3rem;
-    right: -3rem;
-    width: 45%;
+  .flower-roses-2 {
+    top: -6rem;
+    right: -4.5rem;
+    width: 60%;
+  }
+
+  .flower-roses-3 {
+    top: -9rem;
+    left: -4rem;
+    width: 70%;
+  }
+
+  .flower-rose-4 {
+    bottom: 0rem;
+    right: -4.5rem;
+    width: 40%;
+    transform: rotateY(180deg) rotate(-15deg);
+  }
+
+  .flower-pinks-1 {
+    top: -4.5rem;
+    right: -2rem;
+    width: 60%;
     transform: rotate(10deg);
   }
 
-  .flower-violet-2 {
-    top: -4rem;
-    left: -3rem;
-    width: 65%;
-    transform: rotateY(180deg);
+  .flower-pinks-2 {
+    top: -8rem;
+    left: -1rem;
+    width: 40%;
   }
 
-  .flower-violet-3 {
-    top: -7rem;
-    right: -2rem;
-    width: 50%;
-    transform: rotate(30deg);
+  .flower-pinks-3 {
+    top: -7.5rem;
+    right: -4rem;
+    width: 55%;
+  }
+
+  .flower-violet-4 {
+    top: -2rem;
+    left: -1.5rem;
+    width: 45%;
+    transform: rotate(-45deg);
   }
 
   @media (min-width: 360px) {
-    .flower-rose-1 {
-      top: -2rem;
-      left: -2rem;
-      width: 37%;
-    }
-
-    .flower-rose-2 {
-      top: -6rem;
-      right: -3rem;
+    .flower-roses-1 {
+      top: -3rem;
+      left: -5rem;
       width: 60%;
     }
 
-    .flower-violet-1 {
-      top: -3rem;
-      right: -3rem;
+    .flower-roses-2 {
+      top: -6rem;
+      right: -4rem;
+      width: 60%;
+    }
+
+    .flower-roses-3 {
+      top: -9rem;
+      left: -4rem;
+      width: 65%;
+    }
+
+    .flower-rose-4 {
+      bottom: 0rem;
+      right: -4.5rem;
       width: 40%;
     }
 
-    .flower-violet-2 {
-      top: -5rem;
-      left: -3rem;
+    .flower-pinks-1 {
+      top: -4.5rem;
+      right: -2rem;
+      width: 60%;
+    }
+
+    .flower-pinks-2 {
+      top: -8rem;
+      left: -1rem;
+      width: 40%;
+    }
+
+    .flower-pinks-3 {
+      top: -8rem;
+      right: -4rem;
       width: 55%;
     }
 
-    .flower-violet-3 {
-      top: -8rem;
+    .flower-violet-4 {
+      top: -2rem;
+      left: -1.5rem;
+      width: 45%;
+    }
+  }
+
+  @media (min-width: 400px) {
+    .flower-roses-1 {
+      top: -2.5rem;
+      left: -5rem;
+      width: 55%;
+    }
+
+    .flower-roses-2 {
+      top: -6rem;
+      right: -4rem;
+      width: 57%;
+    }
+
+    .flower-roses-3 {
+      top: -10rem;
+      left: -5rem;
+      width: 65%;
+    }
+
+    .flower-rose-4 {
+      bottom: 0rem;
+      right: -4.5rem;
+      width: 40%;
+    }
+
+    .flower-pinks-1 {
+      top: -5.5rem;
       right: -2rem;
+      width: 60%;
+    }
+
+    .flower-pinks-2 {
+      top: -8rem;
+      left: -1rem;
+      width: 37%;
+    }
+
+    .flower-pinks-3 {
+      top: -8rem;
+      right: -4rem;
       width: 50%;
+    }
+
+    .flower-violet-4 {
+      top: -2rem;
+      left: -1.5rem;
+      width: 45%;
     }
   }
 
   @media (min-width: 480px) {
-    .flower-rose-2 {
-      top: -8rem;
-      right: -3rem;
-      width: 60%;
+    .flower-roses-1 {
+      top: -3.5rem;
+      left: -5rem;
+      width: 50%;
     }
 
-    .flower-rose-3 {
-      top: -5.5rem;
-      left: -3rem;
+    .flower-roses-2 {
+      top: -6rem;
+      right: -5rem;
       width: 55%;
     }
 
-    .flower-violet-2 {
-      top: -7rem;
-      left: -3rem;
-      width: 55%;
+    .flower-roses-3 {
+      top: -12rem;
+      left: -5rem;
+      width: 65%;
     }
 
-    .flower-violet-3 {
-      top: -10rem;
-      right: -2rem;
+    .flower-rose-4 {
+      bottom: 0rem;
+      right: -4.5rem;
       width: 40%;
+    }
+
+    .flower-pinks-1 {
+      top: -6rem;
+      right: -1rem;
+      width: 50%;
+    }
+
+    .flower-pinks-2 {
+      top: -9rem;
+      left: -1rem;
+      width: 35%;
+    }
+
+    .flower-pinks-3 {
+      top: -9.5rem;
+      right: -4rem;
+      width: 50%;
+    }
+
+    .flower-violet-4 {
+      top: -2rem;
+      left: -1.5rem;
+      width: 45%;
     }
   }
 

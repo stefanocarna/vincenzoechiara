@@ -7,6 +7,7 @@
 dist
 
 assets/images/other
+assets/images/carousel/others
 
 # Node dependencies
 node_modules

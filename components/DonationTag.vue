@@ -1,5 +1,17 @@
 <template>
   <div class="donation-tag-container">
+    <div class="flower flower-violet-4">
+      <img
+        src="@/assets/images/flowers/gpink4.png"
+        classs="w-full h-full object-cover"
+      />
+    </div>
+    <div class="flower flower-rose-4">
+      <img
+        src="@/assets/images/flowers/wrose1.png"
+        classs="w-full h-full object-cover"
+      />
+    </div>
     <div class="donation-tag bg-purple-200 w-full m-2">
       <div class="detail-row">
         <span class="detail-label text-lg text-gray-600">Iban</span>
@@ -17,6 +29,8 @@
 
 <style scoped>
 .donation-tag-container {
+  position: relative;
+
   display: flex;
   width: 90%;
   justify-content: center;
@@ -36,11 +50,21 @@
   background-position: bottom 15% center;
   /* background: #d1b6e1; */
   /* border-radius: 8px; */
-  padding: 30px 25px;
+  padding: 1.5rem 1rem;
   box-shadow: 0 10px 30px rgba(122, 78, 139, 0.2);
   border: 1px solid #e8d5f2;
   font-family: "Montserrat", sans-serif;
   min-height: 10rem;
+  max-width: 70%;
+
+  border-radius: 30%;
+}
+
+@media (max-width: 400px) {
+  .donation-tag {
+    max-width: 80%;
+    padding: 1rem 0.5rem;
+  }
 }
 
 .envelope-flap {

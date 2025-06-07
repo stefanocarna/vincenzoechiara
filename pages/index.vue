@@ -26,25 +26,15 @@
         </p>
 
         <div class="relative overflow-visible z-10">
-          <div
-            class="flower flower-violet-1"
-            data-aos="zoom-in"
-            data-aos-delay="250"
-            data-aos-duration="600"
-          >
+          <div class="flower flower-roses-1">
             <img
-              src="@/assets/images/flowers/gpink3.png"
+              src="@/assets/images/flowers/wroses1.png"
               classs="w-full h-full object-cover"
             />
           </div>
-          <div
-            class="flower flower-rose-1"
-            data-aos="zoom-in"
-            data-aos-delay="150"
-            data-aos-duration="600"
-          >
+          <div class="flower flower-pinks-1">
             <img
-              src="@/assets/images/flowers/wrose2.png"
+              src="@/assets/images/flowers/gpinks1.png"
               class="w-full h-full object-cover"
             />
           </div>
@@ -74,15 +64,15 @@
         </div>
 
         <div class="relative overflow-visible z-10">
-          <div class="flower flower-violet-2">
+          <div class="flower flower-roses-2">
             <img
-              src="@/assets/images/flowers/gpink1.png"
-              class="w-full h-full object-cover"
+              src="@/assets/images/flowers/wroses2.png"
+              classs="w-full h-full object-cover"
             />
           </div>
-          <div class="flower flower-rose-2">
+          <div class="flower flower-pinks-2">
             <img
-              src="@/assets/images/flowers/wrose5.png"
+              src="@/assets/images/flowers/gpinks2.png"
               class="w-full h-full object-cover"
             />
           </div>
@@ -117,19 +107,20 @@
         </div>
 
         <div class="relative overflow-visible z-10">
-          <div class="flower flower-rose-3">
+          <div class="flower flower-pinks-3">
             <img
-              src="@/assets/images/flowers/wrose3.png"
-              class="w-full h-full object-cover"
+              src="@/assets/images/flowers/gpinks3.png"
+              classs="w-full h-full object-cover"
             />
           </div>
-          <div class="flower flower-violet-3">
+          <div class="flower flower-roses-3">
             <img
-              src="@/assets/images/flowers/gpink2.png"
+              src="@/assets/images/flowers/wroses3.png"
               class="w-full h-full object-cover"
             />
           </div>
         </div>
+
         <br />
         <br />
 
