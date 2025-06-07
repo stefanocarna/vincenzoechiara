@@ -6,6 +6,8 @@
 .cache
 dist
 
+assets/images/other
+
 # Node dependencies
 node_modules
 

@@ -10,8 +10,8 @@ module.exports = {
   ],
   theme: {
     fontFamily: {
-      serif: ['"Didact Gothic"', 'serif'],
-      sans: ['"Great Vibes"', 'sans-serif'],
+      sans: ['"Delius"', 'sans'],
+      serif: ['"WindSong"', 'serif'],
     },
     extend: {},
   },

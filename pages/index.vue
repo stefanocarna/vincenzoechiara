@@ -1,156 +1,384 @@
 <template>
-  <div>
-    <!-- Hero Section (full viewport height) -->
-    <section
-      class="md:hidden min-h-svh relative flex items-end justify-center p-8"
-    >
-      <!-- Background image -->
-      <div
-        v-for="(photo, index) in photos"
-        :key="index"
-        class="absolute inset-0 -z-10 transition-opacity duration-700"
-        :class="{
-          'opacity-100': currentIndex === index,
-          'opacity-0': currentIndex !== index,
-        }"
-      >
-        <img
-          :src="photo.src"
-          :alt="photo.alt"
-          class="w-full h-full object-cover"
+  <div
+    class="fixed w-full h-full scontainer shadow-lg overflow-hidden -z-20"
+  ></div>
+
+  <div class="min-h-screen overflow-hidden relative">
+    <!-- Animated gradient background -->
+    <!-- <div
+      class="absolute inset-0 bg-gradient-to-r from-purple-400 via-pink-500 to-red-500 animate-gradient -z-20"
+    ></div> -->
+
+    <!-- Main content container -->
+    <div class="relative mx-auto min-h-screen mcontainer bg-white">
+      <!-- Your mobile content -->
+      <div class="bg-ivory pb-8 overflow-hidden">
+        <HeroSection />
+
+        <WeddingNamesCard
+          brideName="Vincenzo"
+          groomName="e Chiara"
+          subtext="vi invitano al loro matrimonio"
         />
+
+        <p class="text-xl text-center my-8 px-4">
+          vi invitano al loro matrimonio
+        </p>
+
+        <div class="relative overflow-visible z-10">
+          <div
+            class="flower flower-violet-1"
+            data-aos="zoom-in"
+            data-aos-delay="250"
+            data-aos-duration="600"
+          >
+            <img
+              src="@/assets/images/flowers/gpink3.png"
+              classs="w-full h-full object-cover"
+            />
+          </div>
+          <div
+            class="flower flower-rose-1"
+            data-aos="zoom-in"
+            data-aos-delay="150"
+            data-aos-duration="600"
+          >
+            <img
+              src="@/assets/images/flowers/wrose2.png"
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+        <div class="page-section page-section-left text-center text-xl">
+          <WeddingDate />
+
+          <p class="my-8 font-bold z-20">ore 16:30</p>
+
+          <p class="text-xl">Santuario Madonna SS delle Grazie</p>
+
+          <div class="location px-2">
+            <img
+              src="@/assets/images/church.jpg"
+              alt="Description"
+              class="rounded-md shadow-xl mb-4 mt-2"
+            />
+          </div>
+
+          <a
+            class="elegant-purple-btn z-20"
+            href="https://www.google.com/maps/dir/?api=1&destination=Santuario+Madonna+SS+delle+Grazie&travelmode=driving"
+            target="_blank"
+          >
+            Indicazioni
+          </a>
+        </div>
+
+        <div class="relative overflow-visible z-10">
+          <div class="flower flower-violet-2">
+            <img
+              src="@/assets/images/flowers/gpink1.png"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div class="flower flower-rose-2">
+            <img
+              src="@/assets/images/flowers/wrose5.png"
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+
+        <br />
+        <br />
+
+        <div class="page-section page-section-right text-xl">
+          <!-- <WeddingDate /> -->
+
+          <p class="text-center font-bold my-8">ore 19:30</p>
+          <p class="text-center">seguiranno i festeggiamenti presso</p>
+          <br />
+          <p class="text-2xl">La Cascina 1899</p>
+
+          <div class="location px-2">
+            <img
+              src="@/assets/images/cascina.jpg"
+              alt="Description"
+              class="rounded-md shadow-xl mb-4 mt-2"
+            />
+          </div>
+
+          <a
+            class="elegant-purple-btn z-20"
+            href="https://www.google.com/maps/dir/?api=1&destination=38.310719, 16.372643&travelmode=driving"
+            target="_blank"
+          >
+            Indicazioni
+          </a>
+        </div>
+
+        <div class="relative overflow-visible z-10">
+          <div class="flower flower-rose-3">
+            <img
+              src="@/assets/images/flowers/wrose3.png"
+              class="w-full h-full object-cover"
+            />
+          </div>
+          <div class="flower flower-violet-3">
+            <img
+              src="@/assets/images/flowers/gpink2.png"
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+        <br />
+        <br />
+
+        <div class="flex flex-col items-center">
+          <p class="text-xl text-center mt-24 mb-12 px-8">
+            La vostra presenza al nostro matrimonio e' il dono piu' bello.
+            Tuttavia se desiderate contribuire alla nostra nuova vita insieme un
+            pensiero in busta sara' per noi un geso prezioso.
+          </p>
+
+          <DonationTag />
+
+          <p class="text-xl text-center mt-24 mb-8 px-8">
+            Abbiano scelto l'applicazione
+            <span class="font-bold text-purple-800">WedShoot</span> per
+            raccogliere tutti i momenti speciali del nostro matrimonio. Potete
+            scaricarla gratuitamente e unirvi a noi per condividere foto e video
+            della giornata. Per caricare le foto, utilizzate il codice evento:
+          </p>
+          <p class="mb-8">
+            <span class="font-bold text-xl text-purple-800"
+              >VINCENZOCHIARA2025</span
+            >
+          </p>
+
+          <a
+            v-if="isAndroid"
+            href="https://play.google.com/store/search?q=wedshoot&c=apps"
+            class="download-btn download-btn-android first-letter:bg-cover bg-center text-white font-bold py-4 px-10 rounded-lg shadow-md relative overflow-hidden group"
+          >
+          </a>
+          <a
+            v-if="isIOS"
+            href="https://apps.apple.com/it/app/wedshoots/id660256196"
+            class="download-btn download-btn-ios first-letter:bg-cover bg-center text-white font-bold py-4 px-10 rounded-lg shadow-md relative overflow-hidden group"
+          >
+          </a>
+
+          <div
+            class="w-full h-64 mt-24 mb-12 fade-container"
+            data-aos="fade-in"
+            data-aos-delay="150"
+            data-aos-duration="600"
+          >
+            <img
+              src="@/assets/images/hands.jpeg"
+              class="w-full h-full object-cover fade-image"
+            />
+          </div>
+
+          <p class="text-xl text-center mt-8 mb-4 px-8">
+            Vi chiediamo di confermare la vostra presenza e il numero dei
+            partecipanti entro il
+          </p>
+          <p class="text-xl text-center mb-8 px-8 font-bold text-purple-800">
+            01 luglio 2025
+          </p>
+
+          <a
+            class="elegant-purple-btn z-20"
+            href="https://docs.google.com/forms/d/e/1FAIpQLSfZ05dAQfAGg0IN6JRMaz86pt4qL0DtnLY00NxQJNqBTB_gqA/viewform?usp=header"
+            target="_blank"
+            >Conferma</a
+          >
+
+          <div class="bottom-space"></div>
+        </div>
       </div>
 
-      <div
-        class="flex flex-col justify-center items-center w-full inset-0 bg-[radial-gradient(ellipse_at_center,rgba(77,77,77,0.7)_0%,transparent_60%)] text-white py-8"
-      >
-        <!-- <p class="flex-auto text-5xl text-right">Vincenzo</p>
-        <p class="flex-1 text-3xl text-center mx-4">&</p>
-        <p class="flex-auto text-5xl text-left">Chiara</p> -->
-
-        <p class="text-5xl text-center">Vincenzo</p>
-        <p class="text-2xl text-center mx-4">&</p>
-        <p class="text-5xl text-center">Chiara</p>
+      <div class="envelope fixed bottom-0 left-0 right-0 justify-center z-40">
+        <div class="envelope-top mx-auto">
+          <img
+            src="@/assets/images/envelope-top.svg"
+            alt="Fixed bottom image"
+            class="w-full h-auto object-contain"
+          />
+        </div>
       </div>
-    </section>
 
-    <SectionInfo :specialBg="true" :center="true">
-      <div class="text-center max-w-2xl mx-auto x-text-brown font-sans">
-        <h1 class="text-3xl md:text-5xl mb-4">Mercoledì, 6 Agosto 2025</h1>
-        <h1 class="text-3xl md:text-5xl mb-12">ore 17:30</h1>
-        <h1 class="text-3xl md:text-4xl mb-4">
-          Santuario Madonna SS delle Grazie
-        </h1>
-        <h1 class="text-3xl md:text-4xl mb-4">Roccella Ionica</h1>
+      <div class="stamp">
+        <img src="@/assets/images/stamp.png" class="stamp-img object-cover" />
       </div>
-    </SectionInfo>
 
-    <SectionInfo title="Programma">
-      <h2 class="font-serif text-2xl font-extrabold mb-8">Evento Primo</h2>
-      <p class="font-serif text-xl text-gray-700">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
-      </p>
-
-      <p class="mb-8"></p>
-
-      <h2 class="font-serif text-2xl font-extrabold mb-8">Evento Secondo</h2>
-      <p class="font-serif text-xl text-gray-700">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
-      </p>
-
-      <p class="mb-8"></p>
-
-      <h2 class="font-serif text-2xl font-extrabold mb-8">Evento Terzo</h2>
-      <p class="font-serif text-xl text-gray-700">
-        Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod
-        tempor incididunt ut labore et dolore magna aliqua.
-      </p>
-    </SectionInfo>
-
-    <SectionInfo title="Partecipazione">
-      <p class="font-serif text-xl text-gray-700 text-center">
-        Your presence is enough of a present to us! But for those of you who are
-        stubborn, we've put together a wish-list to help you out.
-      </p>
-    </SectionInfo>
-
-    <SectionInfo title="Informazioni Utili">
-      <p class="font-serif text-xl text-gray-700 text-center mb-16">
-        For all our friends and family who have lots of questions, please check
-        out our Q & A first!
-      </p>
-
-      <h1 class="font-serif text-xl font-extrabold mb-8">
-        Entro quando dare la partecipazione?
-      </h1>
-      <p class="font-serif text-xl text-gray-700">
-        Please RSVP by April 15th, so we can have an accurate headcount. :)
-      </p>
-    </SectionInfo>
+      <div class="envelope fixed bottom-0 left-0 right-0 justify-center -z-10">
+        <div class="envelope-bottom mx-auto">
+          <img
+            src="@/assets/images/envelope-bottom.svg"
+            alt="Fixed bottom image"
+            class="w-full h-auto object-contain"
+          />
+        </div>
+      </div>
+    </div>
   </div>
 </template>
 
-<script setup>
-const services = [
-  {
-    icon: "🚀",
-    title: "Fast Delivery",
-    description:
-      "Get your products faster than ever with our optimized logistics",
+<script>
+import DonationTag from "@/components/DonationTag.vue";
+import HeroSection from "@/components/HeroSection.vue";
+import WeddingDate from "@/components/WeddingDate.vue";
+import WeddingNamesCard from "@/components/WeddingNamesCard.vue";
+
+export default {
+  components: {
+    DonationTag,
+    HeroSection,
+    WeddingDate,
+    WeddingNamesCard,
   },
-  {
-    icon: "🛡️",
-    title: "Secure Payments",
-    description: "100% secure payment processing with end-to-end encryption",
+  data() {
+    return {
+      isAndroid: false,
+      isIOS: false,
+    };
   },
-  {
-    icon: "🌟",
-    title: "Premium Quality",
-    description: "Only the highest quality products from trusted suppliers",
+  mounted() {
+    this.detectOS();
   },
-];
+  methods: {
+    detectOS() {
+      const userAgent = navigator.userAgent || navigator.vendor || window.opera;
 
-import { ref, onMounted } from "vue";
+      // Android detection
+      if (/android/i.test(userAgent)) {
+        this.isAndroid = true;
+      }
 
-import image0 from "@/assets/carousel/c0.jpeg";
-import image1 from "@/assets/carousel/c1.jpeg";
-import image2 from "@/assets/carousel/c2.jpeg";
-import image3 from "@/assets/carousel/c3.jpeg";
-import image4 from "@/assets/carousel/c4.jpeg";
-
-const photos = [
-  { src: image0, alt: "Description 0" },
-  { src: image1, alt: "Description 1" },
-  { src: image2, alt: "Description 2" },
-  { src: image3, alt: "Description 3" },
-  { src: image4, alt: "Description 4" },
-  // Add more photos
-];
-
-import ItemInfo from "@/components/ItemInfo.vue";
-import SectionInfo from "@/components/SectionInfo.vue";
-
-const currentIndex = ref(0);
-
-const next = () => {
-  currentIndex.value = (currentIndex.value + 1) % photos.length;
+      // iOS detection
+      if (/iPad|iPhone|iPod/.test(userAgent) && !window.MSStream) {
+        this.isIOS = true;
+      }
+    },
+    doAndroidAction() {
+      alert("Redirecting to Google Play Store...");
+      // Replace with your actual Android app download link or action
+    },
+    doIOSAction() {
+      alert("Redirecting to Apple App Store...");
+      // Replace with your actual iOS app download link or action
+    },
+  },
 };
-
-const prev = () => {
-  currentIndex.value = (currentIndex.value - 1 + photos.length) % photos.length;
-};
-
-// Auto-advance carousel (optional)
-onMounted(() => {
-  setInterval(next, 5000);
-});
 </script>
 
 <style scoped>
-/* Ensure hero section is exactly viewport height */
-.min-h-screen {
-  min-height: 100vh;
+/* Add this to your CSS file or style tag */
+.animate-gradient {
+  background-size: 300% 300%;
+  animation: gradient 15s ease infinite;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.mcontainer {
+  max-width: 34rem;
+}
+
+.scontainer {
+  display: none;
+  background-image: url("~/assets/images/bg/infinite-1.jpg");
+  background-size: contain;
+  background-repeat: repeat;
+}
+
+.location {
+  -webkit-mask-image: radial-gradient(
+    circle at 50% 60%,
+    black 50%,
+    rgba(0, 0, 0, 0.6) 50%
+  );
+  mask-image: radial-gradient(
+    circle at 50% 60%,
+    black 50%,
+    rgba(0, 0, 0, 0.6) 50%
+  );
+
+  margin: 1rem auto;
+  width: 100%;
+}
+
+.envelope {
+  display: none;
+}
+
+@media (min-width: 34rem) {
+  .scontainer {
+    display: block;
+  }
+
+  .mcontainer {
+    @apply rounded-lg;
+    @apply p-4;
+    @apply bg-purple-300;
+  }
+
+  .envelope {
+    display: block;
+  }
+}
+
+.envelope-top {
+  width: 100%;
+  max-width: 40rem;
+}
+
+.envelope-bottom {
+  width: 100%;
+  max-width: 40rem;
+}
+
+.stamp {
+  display: none;
+}
+
+.stamp-img {
+  width: 7rem;
+  height: auto;
+}
+
+.bottom-space {
+  width: 100%;
+  height: 2rem;
+}
+
+@media (min-width: 34rem) {
+  .stamp {
+    z-index: 50;
+    display: flex;
+    justify-content: center;
+    position: fixed;
+    bottom: 7rem;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: auto;
+  }
+
+  .bottom-space {
+    height: 16rem;
+  }
 }
 </style>
